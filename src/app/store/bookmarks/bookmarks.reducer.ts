@@ -20,6 +20,28 @@ export const bookmarksReducer = createReducer(
     ...state,
     bookmarks: [...state.bookmarks, bookmark],
   })),
+  on(BookmarksActions.addBookmarkFailure, (state, { error }) => ({
+    ...state,
+    error,
+  })),
+  on(BookmarksActions.updateBookmarkSuccess, (state, { bookmark }) => ({
+    ...state,
+    bookmarks: state.bookmarks.map((b) =>
+      b.id === bookmark.id ? bookmark : b
+    ),
+  })),
+  on(BookmarksActions.updateBookmarkFailure, (state, { error }) => ({
+    ...state,
+    error,
+  })),
+  on(BookmarksActions.deleteBookmarkSuccess, (state, { id }) => ({
+    ...state,
+    bookmarks: state.bookmarks.filter((b) => b.id !== id),
+  })),
+  on(BookmarksActions.deleteBookmarkFailure, (state, { error }) => ({
+    ...state,
+    error,
+  })),
   on(BookmarksActions.setQuery, (state, { query }) => ({
     ...state,
     query,

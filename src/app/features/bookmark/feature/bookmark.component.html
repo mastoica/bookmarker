@@ -1,0 +1,67 @@
+<mat-card>
+  <mat-card-header class="bookmark-card-header">
+    <mat-card-title>
+      @if(this.$bookmark()) { Update {{ this.$bookmark()?.title }} bookmark }
+      @else { Create new Bookmark }
+      <mat-icon>bookmark_outline</mat-icon>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content
+    class="bookmark-card-content"
+    [formGroup]="bookmarkFormGroup"
+  >
+    <div class="bookmark-form">
+      <mat-form-field class="title-form-field">
+        <mat-label>Title</mat-label>
+        <input matInput placeholder="Title" formControlName="title" />
+        <mat-error
+          *ngIf="
+            bookmarkFormGroup.controls.title.touched &&
+            bookmarkFormGroup.controls.title.invalid &&
+            bookmarkFormGroup.controls.title.hasError('required')
+          "
+          >Title is required</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field class="url-form-field">
+        <mat-label>URL</mat-label>
+        <input matInput placeholder="URL" formControlName="url" />
+        <mat-error
+          *ngIf="
+            bookmarkFormGroup.controls.url.touched &&
+            bookmarkFormGroup.controls.url.invalid &&
+            bookmarkFormGroup.controls.url.hasError('required')
+          "
+          >URL is required</mat-error
+        >
+        <mat-error
+          *ngIf="
+            bookmarkFormGroup.controls.url.touched &&
+            bookmarkFormGroup.controls.url.invalid &&
+            bookmarkFormGroup.controls.url.hasError('invalidUrl')
+          "
+          >Invalid URL</mat-error
+        >
+      </mat-form-field>
+    </div>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    @if(this.$bookmark()) {
+    <button
+      mat-flat-button
+      [disabled]="!bookmarkFormGroup.touched || bookmarkFormGroup.invalid"
+      (click)="updateBookmark()"
+    >
+      Update bookmark
+    </button>
+    } @else {
+    <button
+      mat-flat-button
+      [disabled]="!bookmarkFormGroup.touched || bookmarkFormGroup.invalid"
+      (click)="createBookmark()"
+    >
+      Create bookmark
+    </button>
+    }
+  </mat-card-actions>
+</mat-card>

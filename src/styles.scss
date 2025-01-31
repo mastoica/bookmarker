@@ -23,4 +23,39 @@ app-root {
     @include mat.toolbar-overrides((container-background-color: #315399,
             container-text-color: white,
         ));
+
+    @include mat.card-overrides((elevated-container-color: rgba(225, 225, 225, 0.25),
+        ));
+    @include mat.button-overrides((filled-disabled-container-color: rgba(0, 0, 0, 0.1),
+            filled-disabled-label-text-color: rgba(0, 0, 0, 0.25),
+            filled-container-color: #315399,
+            filled-label-text-color: white,
+        ));
+    @include mat.form-field-overrides((filled-container-color: transparent,
+            filled-input-text-color: rgba(0, 0, 0, 0.87),
+            filled-label-text-color: rgba(0, 0, 0, 0.75),
+            filled-focus-label-text-color: rgba(0, 0, 0, 0.95),
+            filled-input-text-placeholder-color: rgba(0, 0, 0, 0.5),
+            filled-error-focus-label-text-color: rgba(232, 97, 82, 0.86),
+            filled-error-label-text-color: rgba(232, 97, 82, 0.86),
+            filled-error-hover-label-text-color: rgba(232, 97, 82, 0.86),
+            error-text-color: rgba(232, 97, 82, 0.86),
+            filled-error-hover-active-indicator-color: rgba(232, 97, 82, 0.86),
+            filled-hover-label-text-color: rgba(0, 0, 0, 0.5),
+            filled-hover-active-indicator-color: rgba(0, 0, 0, 0.5),
+            filled-focus-active-indicator-color: #315399,
+        ));
+    @include mat.dialog-overrides((container-color: white,
+            subhead-color: black,
+            supporting-text-color: black));
+}
+
+.mdc-button.mat-warn.mat-mdc-unelevated-button {
+    background-color: #ff4081;
+    color: white;
+}
+
+.mdc-button.mat-mdc-unelevated-button {
+    background-color: #ff4081;
+    color: white;
 }

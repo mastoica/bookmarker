@@ -1,0 +1,18 @@
+<mat-toolbar class="toolbar" color="primary">
+  <div class="back-button">
+    @if (!$isHome()) {
+    <button mat-icon-button routerLink="..">
+      <mat-icon>arrow_back_ios</mat-icon>
+    </button>
+    }
+  </div>
+  <div class="logo" routerLink="/">Bookmarker</div>
+  <app-search></app-search>
+  <div class="action-buttons">
+    @if($isHome()) {
+    <button mat-icon-button routerLink="/new">
+      <mat-icon>add</mat-icon>
+    </button>
+    }
+  </div>
+</mat-toolbar>

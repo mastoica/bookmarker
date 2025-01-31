@@ -1,0 +1,37 @@
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+
+    .logo,
+    .action-buttons {
+        flex: 1;
+        padding: 0 16px;
+    }
+
+    .back-button {
+        width: 64px;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .action-buttons {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .logo {
+        cursor: pointer;
+        height: 64px;
+        display: flex;
+        align-items: center;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+    }
+}

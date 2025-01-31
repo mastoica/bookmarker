@@ -1,0 +1,39 @@
+app-bookmark-form {
+    width: 75%;
+    margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+    app-bookmark-form {
+        width: 95%;
+    }
+}
+
+.bookmark-card-header .mat-mdc-card-header-text {
+    width: 100%;
+
+    .mat-mdc-card-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.bookmark-card-content {
+    padding: 36px 24px;
+
+    .bookmark-form {
+        display: flex;
+        gap: 24px;
+
+        mat-form-field {
+            &.title-form-field {
+                flex: 1;
+            }
+
+            &.url-form-field {
+                flex: 2;
+            }
+        }
+    }
+}
