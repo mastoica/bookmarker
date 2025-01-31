@@ -1,0 +1,9 @@
+<ng-container [formGroup]="searchForm">
+  <mat-form-field class="custom-search">
+    <mat-icon matPrefix>search</mat-icon>
+    <input matInput placeholder="Filter bookmarks..." formControlName="query" />
+    @if (searchForm.controls.query.value) {
+    <mat-icon matSuffix (click)="clearQuery()">close</mat-icon>
+    }
+  </mat-form-field>
+</ng-container>

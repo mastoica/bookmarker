@@ -1,0 +1,10 @@
+@for (item of $groupedBookmarks() | keyvalue:sortBykey; track item.key) {
+<div class="group-key">{{ item.key }}</div>
+<ul class="bookmarks-list">
+  @for (bookmark of item.value; track bookmark.id) {
+  <li>
+    <app-bookmark [bookmark]="bookmark"></app-bookmark>
+  </li>
+  }
+</ul>
+}

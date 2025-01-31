@@ -1,0 +1,14 @@
+<div class="bookmark">
+  <mat-icon class="icon">bookmark</mat-icon>
+  <div class="content">
+    <div class="title">{{ bookmark().title }}</div>
+    <a class="url" href="{{ bookmark().url }}" target="_blank">{{
+      bookmark().url
+    }}</a>
+  </div>
+  <div class="action">
+    <button mat-icon-button>
+      <mat-icon>edit</mat-icon>
+    </button>
+  </div>
+</div>
